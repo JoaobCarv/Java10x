@@ -8,7 +8,7 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    private long id;
     private String name;
     private String email;
     private int idade;
@@ -25,10 +25,6 @@ public class NinjaModel {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
