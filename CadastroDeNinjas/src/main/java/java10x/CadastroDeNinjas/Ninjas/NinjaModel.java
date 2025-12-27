@@ -1,17 +1,27 @@
-package java10x.CadastroDeNinjas.Models;
+package java10x.CadastroDeNinjas.Ninjas;
 
 import jakarta.persistence.*;
+import java10x.CadastroDeNinjas.Missions.MissionModel;
+
+import java.util.List;
 
 @Entity
-@Table(name = "tb_cadastro_ninjas")
+@Table(name = "tb_ninjas")
 public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
+
     private String email;
+
     private int idade;
+
+    @ManyToOne
+    @JoinColumn(name = "missions_id")
+    private MissionModel mission;
 
     public NinjaModel() {
     }
